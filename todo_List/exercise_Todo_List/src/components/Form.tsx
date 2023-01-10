@@ -10,6 +10,7 @@ export const Form = () => {
    const sendTask = (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault() //evitar refresh da pagina ao envio do formulario
         if(!task){ // prevenção para que o usuario mande com o campo vazio
+         alert('Insira uma tarefa')
          return 
         }
         setItem([...item,{id:Math.random(),task,done:false}]) // coloca no item uma copia dele mesmo é a task
@@ -17,7 +18,7 @@ export const Form = () => {
       
    }
      const deleteItem = (id:number) => {
-         setItem(item.filter(t=> t.id !== id))
+         setItem(item.filter(t=> t.id !== id)) //coloco no array os ids que não são iguais ao clicado
    }  
    console.log(item)
 
